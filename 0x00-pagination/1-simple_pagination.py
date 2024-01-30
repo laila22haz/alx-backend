@@ -35,6 +35,6 @@ class Server:
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         assert type(page) == int and page > 0, "Incorrect input"
         assert type(page_size) == int and page > 0, "Incorrect input"
-        indexes = index_range(page, page_size)
+        indexes:  Tuple = index_range(page, page_size)
         dataset = self.dataset()
         return dataset[indexes[0]: indexes[1]]
