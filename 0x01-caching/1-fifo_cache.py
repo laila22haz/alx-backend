@@ -18,7 +18,7 @@ class FIFOCache(BaseCaching):
             item_discared = self.key_idexes.pop(0)
             del self.cache_data[item_discared]
             print("DISCARD:", item_discared, end="\n")
-        self.cache_data[key] = item
+        #self.cache_data[key] = item
         self.key_idexes.append(key)
 
     def get(self, key):
