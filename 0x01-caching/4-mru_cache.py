@@ -24,6 +24,6 @@ class MRUCache(BaseCaching):
         """get funtion"""
         if key is not None and key in self.cache_data:
             self.dq.remove(key)
-            self.dq.append(key)
+            self.dq.insert(0, key)
             return self.cache_data[key]
         return None
