@@ -14,7 +14,9 @@ class Config(object):
     default_local = "en"
     default_zone = "UTC"
 
+
 app.config.from_object(Config)
+
 
 @app.route('/', strict_slashes=False)
 def index():
