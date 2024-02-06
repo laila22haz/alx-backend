@@ -4,17 +4,16 @@
 from flask import Flask, render_template
 from flask_babel import Babel
 
-app = Flask(__name__)
-babel = Babel
 
-
-class Config(object):
+class Config:
     """config class"""
     LANGUAGES = ["en", "fr"]
     default_local = "en"
     default_zone = "UTC"
 
 
+app = Flask(__name__)
+babel = Babel(app)
 app.config.from_object(Config)
 
 
