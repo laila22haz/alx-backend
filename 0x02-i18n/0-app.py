@@ -5,7 +5,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 
-@app.route('/index', strict_slashes=False)
+@app.route('/', strict_slashes=False)
 def index():
     """returns Hello HBNB!"""
     return render_template("0-index.html")
