@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Basic Flask app"""
 
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from flask_babel import Babel
-import requests
+
 
 
 class Config:
@@ -21,7 +21,7 @@ app.config.from_object(Config)
 @babel.localeselector
 def get_locale():
     """get_local function"""
-    return requests.accept_languages.best_match(app.config["LANGUAGES"])
+    return request.accept_languages.best_match(app.config["LANGUAGES"])
 
 
 @app.route('/', strict_slashes=False)
