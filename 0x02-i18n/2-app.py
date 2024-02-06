@@ -21,13 +21,13 @@ app.config.from_object(Config)
 @babel.localeselector
 def get_locale():
     """get_local function"""
-    requests.accept_languages.best_match(['en', 'fr'])
+    return requests.accept_languages.best_match(['en', 'fr'])
 
 
 @app.route('/', strict_slashes=False)
 def index():
     """returns Hello HBNB!"""
-    return render_template("1-index.html")
+    return render_template("2-index.html")
 
 
 if __name__ == '__main__':
